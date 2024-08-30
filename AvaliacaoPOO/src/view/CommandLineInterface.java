@@ -98,15 +98,7 @@ public class CommandLineInterface {
 
     private void listarLocais() {
         for (Local local : localService.listarLocais()) {
-        	System.out.printf("\nLocal: %s, %s, Zona %s de %s - %s, %s\n", 
-        		    local.getNome(),
-        		    local.getEndereco(),
-        		    local.getZona(),
-        		    local.getCidade(), 
-        		    local.getEstado(), 
-        		    local.getPais()
-        		);
-        		System.out.printf("Avaliações: %s\n\n", local.getAvaliacoes());
+            System.out.println(local);
         }
     }
 
@@ -115,8 +107,7 @@ public class CommandLineInterface {
         String nome = scanner.nextLine();
         Local local = localService.buscarLocalPorNome(nome);
         if (local != null) {
-            System.out.printf("Local: ",local.getNome(),"Em: ",local.getCidade(),"-",local.getEstado(),", ",local.getPais(),"\n");
-            System.out.printf("Avaliações: ",local.getAvaliacoes());
+            System.out.println(local);
         } else {
             System.out.println("Local não encontrado.");
         }
